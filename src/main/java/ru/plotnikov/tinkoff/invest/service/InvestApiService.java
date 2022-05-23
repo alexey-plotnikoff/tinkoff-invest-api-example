@@ -7,6 +7,9 @@ import ru.tinkoff.piapi.core.InvestApi;
 @Singleton
 
 public class InvestApiService {
+
+    private static final String APP_NAME = "alexey-plotnikoff";
+
     private final InvestApi api;
 
     public InvestApiService(
@@ -18,9 +21,9 @@ public class InvestApiService {
         }
 
         if (sandbox) {
-            api = InvestApi.createSandbox(apiToken);
+            api = InvestApi.createSandbox(apiToken, APP_NAME);
         } else {
-            api = InvestApi.create(apiToken);
+            api = InvestApi.create(apiToken, APP_NAME);
         }
     }
 
