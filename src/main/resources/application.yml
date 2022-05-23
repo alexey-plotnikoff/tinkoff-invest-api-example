@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: Tinkoff Inverst Robot
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+trading:
+  tinkoff:
+    token: ${TOKEN:}
+    sandbox: ${SANDBOX:false}
+    account-id: ${ACCOUNT_ID:}
+
+  algorithm:
+#    для запуска стратегии IntervalStrategy укажите ниже значение "interval"
+    type: ${STRATEGY_TYPE:no}
+    corridor-length: ${CORRIDOR_LENGTH:7}
+    corridor-percentage: ${CORRIDOR_PERCENTAGE:80}
+  figi:
+    - BBG004731489
+  quantity:
+    BBG004731489: 1
