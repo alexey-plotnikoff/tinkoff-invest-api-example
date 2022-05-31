@@ -173,6 +173,13 @@ public class IntervalStrategy implements TradingStrategy {
                     percentage = (int) (((double) valuesInCorridor / lastMonthCandleList.size()) * 100);
                 }
 
+                if (corridorMin == corridorMax) {
+                    log.error("Min/Max corridor values are same, bad candidate for this strategy: [figi = '{}', " +
+                            "min_max_price = '{}']",
+                            figi, corridorMin);
+                    continue;
+                }
+
                 Action nextAction = detectNextAction(figi);
                 corridorMap.put(figi, new Corridor(corridorMin, corridorMax, nextAction));
 
