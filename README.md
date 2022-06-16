@@ -166,3 +166,10 @@ Profit: [figi = 'BBG004731489', total = '260400', operations = '[StatOperation{a
 4. `STRATEGY_TYPE` - String, код стратегии, пока доступно только 2 варианта: `no` и `interval`
 5. Выбор бумаг для торговли определяется через параметр `trading.figi`
 6. Кол-во бумаг для торговли определяется через параметр `trading.quantity`
+
+# Настройки Telegram-bota
+Для подключения telegram-бота - [создайте](https://core.telegram.org/bots#3-how-do-i-create-a-bot) его и укажите 
+необходимые данные:
+1. username бота - параметр `trading.telegram.username`
+2. токен бота - параметр `trading.telegram.access_token`
+3. id чата - параметр `trading.telegram.chat_id`
